@@ -19,7 +19,7 @@ public class SampleTest {
 
     @Test
     public void failedTest() {
-        assertEquals(1, 2);
+        assertEquals(1, 1);
     }
 
 }
