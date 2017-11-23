@@ -1,0 +1,4 @@
+.idea/
+src/test/test.iml
+target/
+uiTests.iml
