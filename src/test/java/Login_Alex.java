@@ -1,9 +1,14 @@
+import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.annotations.AfterTest;
+
+import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -15,11 +20,12 @@ public class Login_Alex {
     public void setUp() {
         System.setProperty("webdriver.gecko.driver", "/Users/alexanderpustovoy/Documents/SampleUITests/drivers/geckodriver-18.0-mac");
         driver = new FirefoxDriver();
+        driver.navigate().to("https://lingualeo.com/ru");
+        driver.manage().window().maximize();
     }
 
     @Test
     public void successfulLoginTest() throws InterruptedException {
-        driver.navigate().to("https://lingualeo.com/ru");
         WebElement enterbtn = driver.findElement(By.id("headEnterBtn"));
         enterbtn.click();
 
@@ -45,6 +51,10 @@ public class Login_Alex {
 
         assertTrue(driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/div/div[1]/div")).isDisplayed());
 
+    }
+
+    @AfterTest
+    public void close() {
         driver.close();
     }
 
