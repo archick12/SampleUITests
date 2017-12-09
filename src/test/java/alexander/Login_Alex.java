@@ -1,4 +1,6 @@
-import org.junit.After;
+package alexander;
+
+import alexander.Landing_Page_Alex;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,8 +8,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterTest;
-
-import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -26,17 +26,15 @@ public class Login_Alex {
 
     @Test
     public void successfulLoginTest() throws InterruptedException {
-        WebElement enterbtn = driver.findElement(By.id("headEnterBtn"));
-        enterbtn.click();
+        Landing_Page_Alex landingPage = new Landing_Page_Alex(driver);
+        landingPage.clickEnterButton();
 
         Thread.sleep(3000);
 
-        WebElement loginEmail = driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div/div[1]/input"));
-        loginEmail.sendKeys("pustovoyalexander@gmail.com");
-        WebElement loginPassword = driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div/div[2]/input"));
-        loginPassword.sendKeys("Qwerty12!");
-        WebElement loginbtn = driver.findElement(By.xpath("//*[@id=\"loginForm\"]/button"));
-        loginbtn.click();
+        Login_Page_Alex loginPage = new Login_Page_Alex(driver);
+        loginPage.enterLoginEmail();
+        loginPage.enterPassword();
+        loginPage.clickLogin();
 
         Thread.sleep(3000);
 
