@@ -18,7 +18,6 @@ public class Login_Page_Alex {
         this.driver = driver;
     }
 
-
     public void enterLoginEmail() {
         WebElement loginEmail = driver.findElement(By.xpath(loginEmail_xpath));
         loginEmail.sendKeys("pustovoyalexander@gmail.com");

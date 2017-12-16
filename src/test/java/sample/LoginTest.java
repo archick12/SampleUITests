@@ -40,9 +40,4 @@ public class LoginTest {
         driver.close();// закрываем окно браузера
     }
 
-    @Test
-    public void failedTest() {
-
-    }
-
 }

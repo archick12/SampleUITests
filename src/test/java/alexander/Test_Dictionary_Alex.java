@@ -8,11 +8,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterTest;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class Login_Alex {
+
+public class Test_Dictionary_Alex {
 
     WebDriver driver = null;
 
@@ -25,7 +25,8 @@ public class Login_Alex {
     }
 
     @Test
-    public void successfulLoginTest() throws InterruptedException {
+    public void dictionaryTest() throws InterruptedException {
+
         Landing_Page_Alex landingPage = new Landing_Page_Alex(driver);
         landingPage.clickEnterButton();
 
@@ -38,18 +39,21 @@ public class Login_Alex {
 
         Thread.sleep(3000);
 
-        String currentTitle = driver.getTitle();
-        String expectedTitle = "Мои задания";
-        assertEquals(currentTitle, expectedTitle);
+        Dashboard_Page_Alex dashboard = new Dashboard_Page_Alex(driver);
+        assertTrue(dashboard.atDashboardPage());
 
-        WebElement myProgress = driver.findElement(By.xpath("//*[@id=\"tabsControl\"]/li[2]/a"));
-        myProgress.click();
+        dashboard.dictionaryClick();
 
         Thread.sleep(3000);
 
-        assertTrue(driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/div/div[1]/div")).isDisplayed());
+        Dictionary_Page_Alex dictionaryPage = new Dictionary_Page_Alex(driver);
+        dictionaryPage.enterText();
+        Thread.sleep(3000);
+        dictionaryPage.addButtonClick();
+
 
     }
+
 
     @AfterTest
     public void close() {
