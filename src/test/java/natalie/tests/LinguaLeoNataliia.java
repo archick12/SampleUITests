@@ -1,9 +1,8 @@
-package natalie;
+package natalie.tests;
 
-import natalie.LandingPageNata;
+import natalie.pages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -34,24 +33,47 @@ public class LinguaLeoNataliia {
 
         LoginPageNata loginPageNata = new LoginPageNata(driver);
         loginPageNata.atThisPage();
-        loginPageNata.enterLoginEmail("nataly333k@gmail.com");
-        loginPageNata.enterPassword("Vqw92x");
-        loginPageNata.loginBtn();
+        loginPageNata.enterLoginEmail();
+        loginPageNata.enterPassword();
+        loginPageNata.clickLogin();
+
+        Thread.sleep(3000);
+
+        DashBoardPage dashBoardPage = new DashBoardPage(driver);
+        assertEquals(true, dashBoardPage.atThisPage());
+        dashBoardPage.clickMyProgress();
+
+        Thread.sleep(3000);
+
+        ProgressPage progressPage = new ProgressPage(driver);
+        progressPage.atThisPage();
+
+    }
+
+    @Test
+    public void addWord() throws InterruptedException {
+        // login in
+        LandingPageNata landingPageNata = new LandingPageNata(driver);
+        assertEquals(true, landingPageNata.atThisPage());
+        landingPageNata.clickEnterButton();
+
+
+        LoginPageNata loginPageNata = new LoginPageNata(driver);
+        loginPageNata.atThisPage();
+        loginPageNata.enterLoginEmail();
+        loginPageNata.enterPassword();
+        loginPageNata.clickLogin();
 
 
         Thread.sleep(3000);
 
+        //adword test (steps)
 
-        String currentTitle = driver.getTitle();
-        String expectedTitle = "Мои задания";
-        assertEquals(currentTitle, expectedTitle);
-
-        WebElement myProgress = driver.findElement(By.xpath("//*[@id=\"tabsControl\"]/li[2]/a"));
-        myProgress.click();
+        HeaderMenu headerMenu = new HeaderMenu(driver);
+        headerMenu.clickDictionaryButton();
 
         Thread.sleep(3000);
 
-        assertTrue(driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/div/div[1]/div")).isDisplayed());
 
     }
 

@@ -1,4 +1,4 @@
-package natalie;
+package natalie.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +8,7 @@ public class LandingPageNata {
 
     private WebDriver driver;
     private String enterbtn_id = "headEnterBtn";
-
-
-    private WebElement welcomeText = driver.findElement(By.xpath("//*[@class='welcome__content']"));
+    private String welcomeText = "//*[contains(@class,'head-simple__logo')]";
 
 
     public LandingPageNata(WebDriver driver) {
@@ -24,7 +22,12 @@ public class LandingPageNata {
     }
 
     public boolean atThisPage() {
-        return welcomeText.isDisplayed();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return driver.findElement(By.xpath(welcomeText)).isDisplayed();
 
     }
 }
