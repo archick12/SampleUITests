@@ -1,9 +1,10 @@
 package alexander;
 
-import alexander.Landing_Page_Alex;
+import alexander.pages.Dashboard_Page_Alex;
+import alexander.pages.Landing_Page_Alex;
+import alexander.pages.Login_Page_Alex;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
