@@ -1,9 +1,10 @@
 package alexander;
 
-import alexander.Landing_Page_Alex;
-import org.openqa.selenium.By;
+import alexander.pages.Dashboard_Page_Alex;
+import alexander.pages.Dictionary_Page_Alex;
+import alexander.pages.Landing_Page_Alex;
+import alexander.pages.Login_Page_Alex;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -50,7 +51,15 @@ public class Test_Dictionary_Alex {
         dictionaryPage.enterText();
         Thread.sleep(3000);
         dictionaryPage.addButtonClick();
+        Thread.sleep(3000);
 
+
+        assertEquals(dictionaryPage.dogTextCheck(), "собака");
+        dictionaryPage.addDogText();
+        Thread.sleep(3000);
+
+        dictionaryPage.deletingWord();
+        Thread.sleep(4000);
 
     }
 
