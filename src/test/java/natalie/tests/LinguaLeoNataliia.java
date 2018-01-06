@@ -58,6 +58,7 @@ public class LinguaLeoNataliia {
         landingPageNata.clickEnterButton();
 
 
+
         LoginPageNata loginPageNata = new LoginPageNata(driver);
         loginPageNata.atThisPage();
         loginPageNata.enterLoginEmail();
@@ -65,12 +66,19 @@ public class LinguaLeoNataliia {
         loginPageNata.clickLogin();
 
 
-        Thread.sleep(3000);
+        Thread.sleep(4000);
 
-        //adword test (steps)
+       AddWord addWord = new AddWord(driver);
+
+        addWord.enterNewWord();
+
+        //addWord.clickButtonAdd();
+        //addWord.clickAddedWord();
+        //addWord.DeleteAddedWord();
+
 
         HeaderMenu headerMenu = new HeaderMenu(driver);
-        headerMenu.clickDictionaryButton();
+
 
         Thread.sleep(3000);
 
