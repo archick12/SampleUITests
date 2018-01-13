@@ -1,6 +1,7 @@
 package natalie.tests;
 
 import natalie.pages.*;
+import natalie.utils.RemoteWebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,7 +19,7 @@ public class LinguaLeoNataliia {
     @BeforeTest
     public void setUp() {
         System.setProperty("webdriver.gecko.driver", "/Users/nataliasocinskaa/Documents/SampleUITests/drivers/geckodriver-18.0-mac");
-        driver = new FirefoxDriver();
+        driver = RemoteWebDriverFactory.createInstance("safari");
         driver.navigate().to("https://lingualeo.com/ru");
         driver.manage().window().maximize();
     }
