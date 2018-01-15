@@ -1,4 +1,4 @@
-package alexander;
+package alexander.Tests;
 
 import alexander.pages.Dashboard_Page_Alex;
 import alexander.pages.Landing_Page_Alex;
@@ -26,26 +26,26 @@ public class Test_LoginAlex {
 
     @Test
     public void successfulLoginTest() throws InterruptedException {
-        Landing_Page_Alex landingPage = new Landing_Page_Alex(driver);
+        Landing_Page_Alex landingPage = new Landing_Page_Alex();
         landingPage.clickEnterButton();
 
-        Thread.sleep(3000);
-
-        Login_Page_Alex loginPage = new Login_Page_Alex(driver);
+        Login_Page_Alex loginPage = new Login_Page_Alex();
         loginPage.enterLoginEmail();
         loginPage.enterPassword();
         loginPage.clickLogin();
 
-        Thread.sleep(3000);
+        Thread.sleep(3000); //поменять на вейт
 
+        // TODO move to atThisPage() check
         String currentTitle = driver.getTitle();
         String expectedTitle = "Мои задания";
         assertEquals(currentTitle, expectedTitle);
 
-        Dashboard_Page_Alex dashboard = new Dashboard_Page_Alex(driver);
+        Dashboard_Page_Alex dashboard = new Dashboard_Page_Alex();
+        //TODO add atThisPage()
         dashboard.myProgressClick();
 
-        Thread.sleep(3000);
+        Thread.sleep(3000); //поменять на вейт
 
         assertTrue(driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/div/div[1]/div")).isDisplayed());
 

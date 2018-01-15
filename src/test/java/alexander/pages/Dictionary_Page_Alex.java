@@ -1,5 +1,6 @@
 package alexander.pages;
 
+import alexander.Utils.RemoteDriverManager;
 import com.sun.xml.internal.ws.model.WrapperBeanGenerator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +11,8 @@ import static org.testng.Assert.assertTrue;
 
 public class Dictionary_Page_Alex {
 
-    public Dictionary_Page_Alex(WebDriver driver) {
-        this.driver = driver;
+    public Dictionary_Page_Alex() {
+        this.driver = RemoteDriverManager.getDriver();
     }
 
     WebDriver driver = null;

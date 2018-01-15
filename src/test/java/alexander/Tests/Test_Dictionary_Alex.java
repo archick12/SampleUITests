@@ -1,4 +1,4 @@
-package alexander;
+package alexander.Tests;
 
 import alexander.pages.Dashboard_Page_Alex;
 import alexander.pages.Dictionary_Page_Alex;
@@ -28,26 +28,26 @@ public class Test_Dictionary_Alex {
     @Test
     public void dictionaryTest() throws InterruptedException {
 
-        Landing_Page_Alex landingPage = new Landing_Page_Alex(driver);
+        Landing_Page_Alex landingPage = new Landing_Page_Alex();
         landingPage.clickEnterButton();
 
-        Thread.sleep(3000);
+      //  Thread.sleep(3000);
 
-        Login_Page_Alex loginPage = new Login_Page_Alex(driver);
+        Login_Page_Alex loginPage = new Login_Page_Alex();
         loginPage.enterLoginEmail();
         loginPage.enterPassword();
         loginPage.clickLogin();
 
         Thread.sleep(3000);
 
-        Dashboard_Page_Alex dashboard = new Dashboard_Page_Alex(driver);
+        Dashboard_Page_Alex dashboard = new Dashboard_Page_Alex();
         assertTrue(dashboard.atDashboardPage());
 
         dashboard.dictionaryClick();
 
         Thread.sleep(3000);
 
-        Dictionary_Page_Alex dictionaryPage = new Dictionary_Page_Alex(driver);
+        Dictionary_Page_Alex dictionaryPage = new Dictionary_Page_Alex();
         dictionaryPage.enterText();
         Thread.sleep(3000);
         dictionaryPage.addButtonClick();
