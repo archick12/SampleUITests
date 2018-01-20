@@ -18,15 +18,15 @@ public class Test_LoginAlex {
 
     @BeforeTest
     public void setUp() {
-        System.setProperty("webdriver.gecko.driver", "/Users/alexanderpustovoy/Documents/SampleUITests/drivers/geckodriver-18.0-mac");
-        driver = new FirefoxDriver();
-        driver.navigate().to("https://lingualeo.com/ru");
-        driver.manage().window().maximize();
+
+
+
     }
 
     @Test(groups = "UI")
     public void successfulLoginTest() throws InterruptedException {
         Landing_Page_Alex landingPage = new Landing_Page_Alex();
+        landingPage.open();
         landingPage.clickEnterButton();
 
         Login_Page_Alex loginPage = new Login_Page_Alex();

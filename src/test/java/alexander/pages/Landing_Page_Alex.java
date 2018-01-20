@@ -25,6 +25,10 @@ public class Landing_Page_Alex {
         enterbtn.click();
     }
 
+    public void open(){
+        driver.navigate().to("https://lingualeo.com/ru");
+    }
+
     public boolean atLoginPage() {
         WebElement popupLoginButton = driver.findElement(By.xpath(popupLoginButton_xpath));
         return (popupLoginButton.isDisplayed());
