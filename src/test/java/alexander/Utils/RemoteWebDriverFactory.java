@@ -2,6 +2,7 @@ package alexander.Utils;
 
 // import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -15,13 +16,17 @@ public class RemoteWebDriverFactory {
     public static WebDriver createInstance(String browserName) {
         // logger.info("CREATING browser instance - " + browserName);
 
+        /*
         URL hostURL = null;
         try {
             hostURL = new URL("http://192.168.193.193:4444/wd/hub");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+        */
+
         DesiredCapabilities capability = null;
+
 
         if (browserName.toLowerCase().contains("firefox")) {
             capability = DesiredCapabilities.firefox();
@@ -42,7 +47,8 @@ public class RemoteWebDriverFactory {
             capability.setBrowserName("safari" );
         }
 
-        WebDriver driver = new RemoteWebDriver(hostURL, capability);
+        //WebDriver driver = new RemoteWebDriver(hostURL, capability);
+        WebDriver driver = new FirefoxDriver();
         return driver;
     }
 }
