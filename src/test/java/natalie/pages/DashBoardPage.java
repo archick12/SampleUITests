@@ -1,5 +1,6 @@
 package natalie.pages;
 
+import natalie.utils.RemoteDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,9 +16,9 @@ public class DashBoardPage {
 
     // constructor for driver initialization
 
-    public DashBoardPage(WebDriver driver) {
-        this.driver = driver;
-    }
+    public DashBoardPage() {
+
+        RemoteDriverManager.getDriver(); }
 
     // action methods
 
