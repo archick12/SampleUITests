@@ -1,13 +1,14 @@
 package alexander.pages;
 
+import alexander.Utils.RemoteDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class Dashboard_Page_Alex {
 
-    public Dashboard_Page_Alex(WebDriver driver) {
-        this.driver = driver;
+    public Dashboard_Page_Alex() {
+        this.driver = RemoteDriverManager.getDriver();
     }
 
     WebDriver driver = null;
