@@ -24,7 +24,7 @@ public class LinguaLeoNataliia {
         driver.manage().window().maximize();
     }
 
-    @Test
+    @Test(groups = "UI")
     public void successfulLoginTest() throws InterruptedException {
 
         LandingPageNata landingPageNata = new LandingPageNata(driver);
@@ -40,7 +40,7 @@ public class LinguaLeoNataliia {
 
         Thread.sleep(3000);
 
-        DashBoardPage dashBoardPage = new DashBoardPage(driver);
+        DashBoardPage dashBoardPage = new DashBoardPage();
         assertEquals(true, dashBoardPage.atThisPage());
         dashBoardPage.clickMyProgress();
 
@@ -51,7 +51,7 @@ public class LinguaLeoNataliia {
 
     }
 
-    @Test
+    @Test(groups = "UI, SKIP")
     public void addWord() throws InterruptedException {
         // login in
         LandingPageNata landingPageNata = new LandingPageNata(driver);
@@ -69,7 +69,7 @@ public class LinguaLeoNataliia {
 
         Thread.sleep(4000);
 
-       AddWord addWord = new AddWord(driver);
+       AddWord addWord = new AddWord();
 
         addWord.enterNewWord();
 
