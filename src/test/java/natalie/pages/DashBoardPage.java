@@ -17,8 +17,8 @@ public class DashBoardPage {
     // constructor for driver initialization
 
     public DashBoardPage() {
-
-        RemoteDriverManager.getDriver(); }
+        driver = RemoteDriverManager.getDriver();
+    }
 
     // action methods
 
