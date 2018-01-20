@@ -16,14 +16,14 @@ public class RemoteWebDriverFactory {
     public static WebDriver createInstance(String browserName) {
         // logger.info("CREATING browser instance - " + browserName);
 
-        /*
+
         URL hostURL = null;
         try {
             hostURL = new URL("http://192.168.193.193:4444/wd/hub");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        */
+
 
         DesiredCapabilities capability = null;
 
@@ -47,8 +47,7 @@ public class RemoteWebDriverFactory {
             capability.setBrowserName("safari" );
         }
 
-        //WebDriver driver = new RemoteWebDriver(hostURL, capability);
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new RemoteWebDriver(hostURL, capability);
         return driver;
     }
 }
