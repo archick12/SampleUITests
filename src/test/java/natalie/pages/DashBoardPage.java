@@ -30,7 +30,7 @@ public class DashBoardPage {
 
     public boolean atThisPage() {
         String currentTitle = driver.getTitle();
-        String expectedTitle = "Мои задания";
+        String expectedTitle = "Задания";
         return expectedTitle.equals(currentTitle);
     }
 
