@@ -24,7 +24,7 @@ public class Test_LoginAlex {
         driver.manage().window().maximize();
     }
 
-    @Test
+    @Test(groups = "UI")
     public void successfulLoginTest() throws InterruptedException {
         Landing_Page_Alex landingPage = new Landing_Page_Alex();
         landingPage.clickEnterButton();
