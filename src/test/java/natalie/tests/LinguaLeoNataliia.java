@@ -14,25 +14,20 @@ import static org.testng.Assert.assertTrue;
 
 public class LinguaLeoNataliia {
 
-    WebDriver driver = null;
-
     @BeforeTest
     public void setUp() {
-        System.setProperty("webdriver.gecko.driver", "/Users/nataliasocinskaa/Documents/SampleUITests/drivers/geckodriver-18.0-mac");
-        driver = RemoteWebDriverFactory.createInstance("safari");
-        driver.navigate().to("https://lingualeo.com/ru");
-        driver.manage().window().maximize();
+
     }
 
     @Test(groups = "UI")
     public void successfulLoginTest() throws InterruptedException {
 
-        LandingPageNata landingPageNata = new LandingPageNata(driver);
+        LandingPageNata landingPageNata = new LandingPageNata();
         assertEquals(true, landingPageNata.atThisPage());
         landingPageNata.clickEnterButton();
 
 
-        LoginPageNata loginPageNata = new LoginPageNata(driver);
+        LoginPageNata loginPageNata = new LoginPageNata();
         loginPageNata.atThisPage();
         loginPageNata.enterLoginEmail();
         loginPageNata.enterPassword();
@@ -46,7 +41,7 @@ public class LinguaLeoNataliia {
 
         Thread.sleep(3000);
 
-        ProgressPage progressPage = new ProgressPage(driver);
+        ProgressPage progressPage = new ProgressPage();
         progressPage.atThisPage();
 
     }
@@ -54,13 +49,13 @@ public class LinguaLeoNataliia {
     @Test(groups = "UI, SKIP")
     public void addWord() throws InterruptedException {
         // login in
-        LandingPageNata landingPageNata = new LandingPageNata(driver);
+        LandingPageNata landingPageNata = new LandingPageNata();
         assertEquals(true, landingPageNata.atThisPage());
         landingPageNata.clickEnterButton();
 
 
 
-        LoginPageNata loginPageNata = new LoginPageNata(driver);
+        LoginPageNata loginPageNata = new LoginPageNata();
         loginPageNata.atThisPage();
         loginPageNata.enterLoginEmail();
         loginPageNata.enterPassword();
@@ -78,7 +73,7 @@ public class LinguaLeoNataliia {
         //addWord.DeleteAddedWord();
 
 
-        HeaderMenu headerMenu = new HeaderMenu(driver);
+        HeaderMenu headerMenu = new HeaderMenu();
 
 
         Thread.sleep(3000);
@@ -88,7 +83,7 @@ public class LinguaLeoNataliia {
 
     @AfterTest
     public void close() {
-        driver.close();
+
     }
 
 }

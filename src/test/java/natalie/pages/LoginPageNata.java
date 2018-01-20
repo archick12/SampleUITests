@@ -1,5 +1,6 @@
 package natalie.pages;
 
+import alexander.Utils.RemoteDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,8 +13,8 @@ public class LoginPageNata {
     String loginPassword_xpath = "//*[@id=\"loginForm\"]/div/div[2]/input";
     String loginbtn_xpath = "//*[@id=\"loginForm\"]/button";
 
-    public LoginPageNata(WebDriver driver) {
-        this.driver = driver;
+    public LoginPageNata() {
+        this.driver = RemoteDriverManager.getDriver();
     }
 
 

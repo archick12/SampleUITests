@@ -1,5 +1,6 @@
 package natalie.pages;
 
+import alexander.Utils.RemoteDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,8 +12,8 @@ public class LandingPageNata {
     private String welcomeText = "//*[contains(@class,'head-simple__logo')]";
 
 
-    public LandingPageNata(WebDriver driver) {
-        this.driver = driver;
+    public LandingPageNata() {
+        this.driver = RemoteDriverManager.getDriver();
     }
 
 

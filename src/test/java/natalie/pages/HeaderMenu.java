@@ -1,5 +1,6 @@
 package natalie.pages;
 
+import alexander.Utils.RemoteDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,8 +13,9 @@ public class HeaderMenu {
 
     // constructor for driver initialization
 
-    public HeaderMenu(WebDriver driver) {
-        this.driver = driver;
+    public HeaderMenu() {
+
+        this.driver = RemoteDriverManager.getDriver();
     }
 
     // action methods

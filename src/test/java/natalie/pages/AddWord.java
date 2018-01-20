@@ -21,10 +21,8 @@ public class AddWord {
     //addWord.DeleteAddedWord();
 
     public AddWord() {
-
         this.driver = RemoteDriverManager.getDriver();
     }
-
 
     public void enterNewWord() {
         WebElement enterdictionary = driver.findElement(By.className(dictionary));
