@@ -38,5 +38,7 @@ public class UITestListener implements ITestListener{
 
     public void onFinish(ITestContext context) {
 
+        RemoteDriverManager.closeDriver();
+
     }
 }
