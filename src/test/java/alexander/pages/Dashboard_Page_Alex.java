@@ -4,6 +4,11 @@ import alexander.Utils.RemoteDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.testng.Assert.assertEquals;
 
 public class Dashboard_Page_Alex {
 
@@ -12,24 +17,21 @@ public class Dashboard_Page_Alex {
     }
 
     WebDriver driver = null;
-    String dictionaryBtn_class = "//*[contains(@class, 'b-dict-link b-header__dict')]";
-    String myProgress_xpath = "//*[@id=\"tabsControl\"]/li[2]/a";
+    String dictionaryBtn_xpath = "//*[contains(@class, 'b-dict-link b-header__dict')]";
     String leoText_class = "dash-intro__title";
 
-
     public void dictionaryClick() {
-        WebElement dictionaryBtn = driver.findElement(By.xpath(dictionaryBtn_class));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(dictionaryBtn_xpath)));
+
+        WebElement dictionaryBtn = driver.findElement(By.xpath(dictionaryBtn_xpath));
         dictionaryBtn.click();
     }
 
-    public void myProgressClick() {
-        WebElement myProgress = driver.findElement(By.xpath(myProgress_xpath));
-        myProgress.click();
-    }
-
     public boolean atDashboardPage() {
-        WebElement leoText = driver.findElement(By.className(leoText_class));
-        return (leoText.isDisplayed());
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className(leoText_class)));
+        return driver.findElement(By.className(leoText_class)).isDisplayed();
     }
 
 }
