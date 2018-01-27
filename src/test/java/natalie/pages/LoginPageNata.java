@@ -15,22 +15,26 @@ public class LoginPageNata {
 
     public LoginPageNata() {
         this.driver = RemoteDriverManager.getDriver();
+
     }
 
 
-    public void enterLoginEmail() {
+    public LoginPageNata enterLoginEmail() {
         WebElement loginEmail = driver.findElement(By.xpath(loginEmail_xpath));
         loginEmail.sendKeys("nataly333k@gmail.com");
+        return this;
     }
 
-    public void enterPassword() {
+    public LoginPageNata enterPassword() {
         WebElement loginPassword = driver.findElement(By.xpath(loginPassword_xpath));
         loginPassword.sendKeys("Vqw92x");
+        return this;
     }
 
-    public void clickLogin() {
+    public LoginPageNata clickLogin() {
         WebElement loginbtn = driver.findElement(By.xpath(loginbtn_xpath));
         loginbtn.click();
+        return this;
     }
 
     public boolean atThisPage() {

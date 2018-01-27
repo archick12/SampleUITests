@@ -23,6 +23,7 @@ public class LinguaLeoNataliia {
     public void successfulLoginTest() throws InterruptedException {
 
         LandingPageNata landingPageNata = new LandingPageNata();
+        landingPageNata.open();
         assertEquals(true, landingPageNata.atThisPage());
         landingPageNata.clickEnterButton();
 
@@ -57,9 +58,7 @@ public class LinguaLeoNataliia {
 
         LoginPageNata loginPageNata = new LoginPageNata();
         loginPageNata.atThisPage();
-        loginPageNata.enterLoginEmail();
-        loginPageNata.enterPassword();
-        loginPageNata.clickLogin();
+        loginPageNata.enterLoginEmail().enterPassword().clickLogin();
 
 
         Thread.sleep(4000);
