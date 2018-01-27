@@ -18,15 +18,13 @@ public class Test_LoginAlex {
 
     @BeforeTest
     public void setUp() {
-        System.setProperty("webdriver.gecko.driver", "/Users/alexanderpustovoy/Documents/SampleUITests/drivers/geckodriver-18.0-mac");
-        driver = new FirefoxDriver();
-        driver.navigate().to("https://lingualeo.com/ru");
-        driver.manage().window().maximize();
+
     }
 
-    @Test
+    @Test(groups = "UI")
     public void successfulLoginTest() throws InterruptedException {
         Landing_Page_Alex landingPage = new Landing_Page_Alex();
+        landingPage.open();
         landingPage.clickEnterButton();
 
         Login_Page_Alex loginPage = new Login_Page_Alex();
@@ -34,20 +32,8 @@ public class Test_LoginAlex {
         loginPage.enterPassword();
         loginPage.clickLogin();
 
-        Thread.sleep(3000); //поменять на вейт
-
-        // TODO move to atThisPage() check
-        String currentTitle = driver.getTitle();
-        String expectedTitle = "Мои задания";
-        assertEquals(currentTitle, expectedTitle);
-
-        Dashboard_Page_Alex dashboard = new Dashboard_Page_Alex();
-        //TODO add atThisPage()
-        dashboard.myProgressClick();
-
-        Thread.sleep(3000); //поменять на вейт
-
-        assertTrue(driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/div/div[1]/div")).isDisplayed());
+        Dashboard_Page_Alex dashboardPage = new Dashboard_Page_Alex();
+        assertTrue(dashboardPage.atDashboardPage());
 
     }
 

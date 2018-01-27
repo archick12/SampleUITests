@@ -10,10 +10,6 @@ public class UITestListener implements ITestListener{
 
     public void onTestStart(ITestResult result) {
 
-        String browserName = result.getTestContext().getCurrentXmlTest().getParameter("browserName");
-        WebDriver driver = RemoteWebDriverFactory.createInstance(browserName);
-        RemoteDriverManager.setWebDriver(driver);
-
     }
 
     public void onTestSuccess(ITestResult result) {
@@ -32,11 +28,17 @@ public class UITestListener implements ITestListener{
 
     }
 
-    public void onStart(ITestContext context) {
+    public void onStart(ITestContext result) {
+
+        String browserName = result.getCurrentXmlTest().getParameter("browserName");
+        WebDriver driver = RemoteWebDriverFactory.createInstance(browserName);
+        RemoteDriverManager.setWebDriver(driver);
 
     }
 
     public void onFinish(ITestContext context) {
+
+        RemoteDriverManager.closeDriver();
 
     }
 }

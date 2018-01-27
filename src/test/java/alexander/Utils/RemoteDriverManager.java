@@ -16,8 +16,6 @@ public class RemoteDriverManager {
 
     static void closeDriver() {
         webDriver.get().quit();
-
-
     }
 
 }
