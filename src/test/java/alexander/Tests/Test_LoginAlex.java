@@ -19,8 +19,6 @@ public class Test_LoginAlex {
     @BeforeTest
     public void setUp() {
 
-
-
     }
 
     @Test(groups = "UI")
