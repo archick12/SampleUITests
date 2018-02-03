@@ -16,7 +16,6 @@ public class Landing_Page_Alex {
 
     WebDriver driver = null;
     String enterbtn_id = "headEnterBtn";
-    String popupLoginButton_xpath = "/html/body/div[8]/div[2]/div/div[2]/div/div[2]/button[2]";
 
     public void clickEnterButton() {
         WebDriverWait wait = new WebDriverWait(driver, 10);

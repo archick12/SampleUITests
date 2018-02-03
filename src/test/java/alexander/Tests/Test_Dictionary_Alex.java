@@ -19,10 +19,7 @@ public class Test_Dictionary_Alex {
 
     @BeforeTest
     public void setUp() {
-        System.setProperty("webdriver.gecko.driver", "/Users/alexanderpustovoy/Documents/SampleUITests/drivers/geckodriver-18.0-mac");
-        driver = new FirefoxDriver();
-        driver.navigate().to("https://lingualeo.com/ru");
-        driver.manage().window().maximize();
+
     }
 
     @Test
