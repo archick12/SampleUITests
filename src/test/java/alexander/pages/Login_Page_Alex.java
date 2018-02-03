@@ -20,27 +20,33 @@ public class Login_Page_Alex {
     String loginbtn_xpath = "//form[@id='loginForm']/button[@data-element='send']";
 
     public void enterLoginEmail() {
+
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(loginEmail_xpath)));
 
         WebElement loginEmail = driver.findElement(By.xpath(loginEmail_xpath));
         loginEmail.sendKeys("pustovoyalexander@gmail.com");
+
     }
 
     public void enterPassword() {
+
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(loginPassword_xpath)));
 
         WebElement loginPassword = driver.findElement(By.xpath(loginPassword_xpath));
         loginPassword.sendKeys("Qwerty12!");
+
     }
 
     public void clickLogin() {
+
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(loginbtn_xpath)));
 
         WebElement loginbtn = driver.findElement(By.xpath(loginbtn_xpath));
         loginbtn.click();
+
     }
 
 }
