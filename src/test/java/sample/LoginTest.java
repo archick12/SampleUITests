@@ -31,7 +31,7 @@ public class LoginTest {
         String appTitle = driver.getTitle();
         System.out.println("Application title is :: " + appTitle);
 
-        String expectedTitle = "Google";
+        String expectedTitle = "Firefox";
 
         assertEquals(appTitle, expectedTitle); // с помощью библиотеки TestNG выполняем сравнение занчений.
         // Если значения совпадут, то тесты буду зелеными
