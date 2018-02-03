@@ -1,8 +1,8 @@
 cd SampleUITests/environment
 
 # start hub
-java -jar selenium-server-standalone-3.8.1.jar -role hub
+java -jar selenium-server-standalone-3.4.0.jar -role hub
 
 # start node
-java -Dwebdrive.gecko.driver=geckodriver-18.0-mac -jar selenium-server-standalone-3.8.1.jar -role node
-java -Dwebdrive.gecko.driver=geckodriver -jar selenium-server-standalone-3.8.1.jar -role node
+java -Dwebdriver.chrome.driver=chromedriver -jar selenium-server-standalone-3.4.0.jar -role node
+java -debug -Dwebdriver.gecko.driver=geckodriver-18.0-mac -jar selenium-server-standalone-3.4.0.jar -role node
